@@ -8,7 +8,8 @@ Generator::Generator()
 
 void Generator::fill(std::vector<int>& tab, int maxValue, int minValu)
 {
+	if (maxValue < minValu) return;
 	for (auto& a : tab)
-		a = rand() % ((maxValue - minValu) + 1) + minValu;
+		a = rand() % (maxValue - minValu + 1) + minValu;
 }
 
