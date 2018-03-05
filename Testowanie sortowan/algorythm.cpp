@@ -1,4 +1,4 @@
-#include "Algorythm.h"
+#include "algorythm.h"
 
 Algorythm::Algorythm()
 {
