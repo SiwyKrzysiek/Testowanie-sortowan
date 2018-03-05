@@ -3,7 +3,7 @@
 
 Generator::Generator()
 {
-	srand(time(nullptr));
+	srand((unsigned int)time(nullptr));
 }
 
 void Generator::fill(std::vector<int>& tab, int maxValue, int minValu)
