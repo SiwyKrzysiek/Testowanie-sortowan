@@ -121,12 +121,14 @@
       <SubType>
       </SubType>
     </ClCompile>
+    <ClCompile Include="sortings.cpp" />
     <ClCompile Include="test.cpp" />
     <ClCompile Include="timer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="algorythm.h" />
     <ClInclude Include="generator.h" />
+    <ClInclude Include="sortings.h" />
     <ClInclude Include="test.h" />
     <ClInclude Include="timer.h" />
   </ItemGroup>

@@ -21,7 +21,7 @@ void bubbleSortV1(std::vector<int>& tab)
     
     for(int i = 0; i < size - 1; i++)
         for(int j = 0; j < size - 1; j++)
-            if(tab[i] > tab[i + 1]) std::swap(tab[i], tab[i + 1]);
+            if(tab[j] > tab[j + 1]) std::swap(tab[j], tab[j + 1]);
 }
 
 void bubbleSortV2(std::vector<int>& tab)
@@ -30,7 +30,7 @@ void bubbleSortV2(std::vector<int>& tab)
     
     for(int i = size-1; i > 0; i--)
         for(int j = 0; j < i; j++)
-            if(tab[i] > tab[i + 1]) std::swap(tab[i], tab[i + 1]);
+            if(tab[j] > tab[j + 1]) std::swap(tab[j], tab[j + 1]);
 }
 
 void bubbleSortV3(std::vector<int>& tab)
@@ -42,9 +42,9 @@ void bubbleSortV3(std::vector<int>& tab)
         bool posortowane = true;
         
         for(int j = 0; j < i; j++)
-            if(tab[i] > tab[i + 1])
+            if(tab[j] > tab[j + 1])
             {
-                std::swap(tab[i], tab[i + 1]);
+                std::swap(tab[j], tab[j + 1]);
                 posortowane = false;
             }
         

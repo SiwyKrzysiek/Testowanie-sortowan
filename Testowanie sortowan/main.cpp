@@ -7,6 +7,7 @@
 #include "test.h"
 #include "generator.h"
 #include "sortings.h"
+#include "timer.h"
 
 using namespace std;
 
@@ -17,12 +18,14 @@ int main()
     
     clock_t t1,t2;
     t1=clock();
+	Timer t;
     //code goes here
     bubbleSortV2(tablica);
     
     t2=clock();
-    float diff ((float)t2-(float)t1);
+    float diff (static_cast<float>(t2)-static_cast<float>(t1));
     cout<<diff/CLOCKS_PER_SEC<<endl;
+	cout << t.getTimeInSeconds() << endl;
 
 
 	return Test::autoTest();

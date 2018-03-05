@@ -33,7 +33,7 @@ void Timer::stop()
     paused = false;
 }
 
-double Timer::getTime()
+double Timer::getTime() const
 {
 	if (paused || stoped)
         return (end - begin);
@@ -41,22 +41,22 @@ double Timer::getTime()
         return (clock() - begin);
 }
 
-double Timer::getTimeInTicks()
+double Timer::getTimeInTicks() const
 {
     return getTime();
 }
 
-double Timer::getTimeInSeconds()
+double Timer::getTimeInSeconds() const
 {
         return getTime() / CLOCKS_PER_SEC;
 }
 
-double Timer::getTimeInMinutes()
+double Timer::getTimeInMinutes() const
 {
     return getTimeInSeconds() / 60.0;
 }
 
-double Timer::getTimeInHours()
+double Timer::getTimeInHours() const
 {
     return getTimeInMinutes() / 60.0;
 }
