@@ -1,12 +1,16 @@
 #include "Algorythm.h"
 
-
-
 Algorythm::Algorythm()
 {
+	sortowanie = nullptr;
 }
 
-
-Algorythm::~Algorythm()
+std::string Algorythm::getName() const
 {
+	return name;
+}
+
+void Algorythm::setName(std::string name)
+{
+	this->name = name;
 }
