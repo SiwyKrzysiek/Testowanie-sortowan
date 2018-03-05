@@ -1,51 +1,62 @@
 #include "timer.h"
 
-
-
 Timer::Timer()
 {
     begin = clock();
     paused = false;
-    running = true;
+    stoped = false;
 }
 
 void Timer::start()
 {
-    running = true;
+    stoped = false;
     
     if (paused)
-    {
         paused = false;
-        begin = end;
-    }
     else
         begin = clock();
 }
 
 void Timer::pause()
 {
-    if (!paused && running)
+    if (!paused && !stoped)
     {
         end = clock();
         paused = true;
-        running = false;
     }
 }
 
 void Timer::stop()
 {
-    if (running || paused)
-    {
-        end = clock();
-        running = false;
-        paused = false;
-    }
+    end = clock();
+    stoped = true;
+    paused = false;
 }
 
 double Timer::getTime()
 {
-	if (paused)
-        return (end - begin) / CLOCKS_PER_SEC;
+	if (paused || stoped)
+        return (end - begin);
     else
-        return (clock() - begin) / CLOCKS_PER_SEC;
+        return (clock() - begin);
+}
+
+double Timer::getTimeInTicks()
+{
+    return getTime();
+}
+
+double Timer::getTimeInSeconds()
+{
+        return getTime() / CLOCKS_PER_SEC;
+}
+
+double Timer::getTimeInMinutes()
+{
+    return getTimeInSeconds() / 60.0;
+}
+
+double Timer::getTimeInHours()
+{
+    return getTimeInMinutes() / 60.0;
 }

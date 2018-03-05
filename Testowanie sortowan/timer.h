@@ -7,8 +7,9 @@ class Timer
 {
 private:
     clock_t begin, end;
-    bool paused, running;
-
+    bool paused, stoped;
+    
+    double getTime();
 public:
 	Timer();
 
@@ -16,7 +17,10 @@ public:
 	void pause();
 	void stop();
 
-	double getTime();
+    double getTimeInTicks();
+	double getTimeInSeconds();
+    double getTimeInMinutes();
+    double getTimeInHours();
 };
 
 #endif // TIMER_H
