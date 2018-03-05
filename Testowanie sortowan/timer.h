@@ -8,7 +8,6 @@ private:
 
 public:
 	Timer();
-	~Timer();
 
 	void start();
 	void pause();
