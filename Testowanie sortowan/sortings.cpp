@@ -1,4 +1,4 @@
-#include "sortings.hpp"
+#include "sortings.h"
 
 void stupidBubbleSort(std::vector<int>& tab)
 {
