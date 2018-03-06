@@ -4,6 +4,7 @@
 
 #include <iostream>
 #include <ctime>
+#include <vector>
 #include "test.h"
 #include "generator.h"
 #include "sortings.h"
@@ -14,7 +15,16 @@ using namespace std;
 
 int main()
 {
-	Interface interface;
+	vector<Algorythm> sortings = 
+	{
+		Algorythm("Sortowanie glupie", stupidBubbleSort),
+		Algorythm("Sortowanie babelkowe nieoptymalne", bubbleSortV1),
+		Algorythm("Sortowanie babelkowe zmniejszajace zakres", bubbleSortV3),
+		Algorythm("Sortowanie babelkowe wykrywajace uporzadkowanie", bubbleSortV3),
+		Algorythm("Sortowanie szybkie", quickSot)
+	};
+
+	Interface interface(sortings);
 	cout << interface.programInfo << endl;
 	interface.mainMenu();
 
