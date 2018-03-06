@@ -1,8 +1,10 @@
 #include "algorythm.h"
 
-Algorythm::Algorythm()
+using namespace std;
+
+Algorythm::Algorythm(const string name, void(*sortowanie) (vector<int>&)) : name(name), sortowanie(sortowanie)
 {
-	sortowanie = nullptr;
+	
 }
 
 std::string Algorythm::getName() const
@@ -13,4 +15,9 @@ std::string Algorythm::getName() const
 void Algorythm::setName(std::string name)
 {
 	this->name = name;
+}
+
+void Algorythm::sort(vector<int>& tab)
+{
+	sortowanie(tab);
 }

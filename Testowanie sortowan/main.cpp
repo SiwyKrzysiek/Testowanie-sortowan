@@ -18,20 +18,22 @@ int main()
 	cout << interface.programInfo << endl;
 	interface.mainMenu();
 
-
- //   vector<int> tablica(1000);
- //   Generator::fill(tablica);
- //   
- //   clock_t t1,t2;
- //   t1=clock();
-	//Timer t;
- //   //code goes here
- //   bubbleSortV2(tablica);
- //   
- //   t2=clock();
- //   float diff (static_cast<float>(t2)-static_cast<float>(t1));
- //   cout<<diff/CLOCKS_PER_SEC<<endl;
-	//cout << t.getTimeInSeconds() << endl;
+#if 0
+    vector<int> tablica(100);
+    Generator::fill(tablica);
+	Algorythm algorythm("Sortowanie babelkowe", bubbleSortV3);
+    
+    clock_t t1,t2;
+    t1=clock();
+	Timer t;
+    //code goes here
+	algorythm.sort(tablica);
+    
+    t2=clock();
+    float diff (static_cast<float>(t2)-static_cast<float>(t1));
+    cout<<diff/CLOCKS_PER_SEC<<endl;
+	cout << t.getTimeInSeconds() << endl;
+#endif
 
 
 	return Test::autoTest();

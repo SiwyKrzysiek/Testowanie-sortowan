@@ -2,6 +2,11 @@
 
 using namespace std;
 
+Interface::Interface() : programInfo("Krzysztof Dabrowski gr. 1I2\nProjekt 1 - Testowanie szybkosci algorytmow sortujacych\n-------------------------------------------------------\n")
+{
+	//sortings = {Algorythm()}
+}
+
 void Interface::mainMenu()
 {
 	char decision;

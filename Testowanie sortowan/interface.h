@@ -3,14 +3,19 @@
 
 #include <iostream>
 #include <string>
+#include <vector>
+
+#include "algorythm.h"
 
 class Interface
 {
 	std::string mainMenuContent() const;
+	std::vector<Algorythm> sortings;
 
 public:
-	const std::string programInfo = "Krzysztof Dabrowski gr. 1I2\nProjekt 1 - Testowanie szybkosci algorytmow sortujacych\n-------------------------------------------------------\n";
+	const std::string programInfo;
 
+	Interface();
 	void mainMenu();
 };
 
