@@ -117,6 +117,7 @@
   <ItemGroup>
     <ClCompile Include="algorythm.cpp" />
     <ClCompile Include="generator.cpp" />
+    <ClCompile Include="interface.cpp" />
     <ClCompile Include="main.cpp">
       <SubType>
       </SubType>
@@ -128,6 +129,7 @@
   <ItemGroup>
     <ClInclude Include="algorythm.h" />
     <ClInclude Include="generator.h" />
+    <ClInclude Include="interface.h" />
     <ClInclude Include="sortings.h" />
     <ClInclude Include="test.h" />
     <ClInclude Include="timer.h" />
