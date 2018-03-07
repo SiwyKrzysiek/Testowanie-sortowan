@@ -17,7 +17,7 @@ int main()
 {
 	vector<Algorythm> sortings = 
 	{
-		Algorythm("Sortowanie glupie", stupidBubbleSort),
+		//Algorythm("Sortowanie glupie", stupidBubbleSort),
 		Algorythm("Sortowanie babelkowe nieoptymalne", bubbleSortV1),
 		Algorythm("Sortowanie babelkowe zmniejszajace zakres", bubbleSortV3),
 		Algorythm("Sortowanie babelkowe wykrywajace uporzadkowanie", bubbleSortV3),

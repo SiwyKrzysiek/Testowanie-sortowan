@@ -5,9 +5,12 @@
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <utility>
+#include <iomanip>
 
 #include "generator.h"
 #include "algorythm.h"
+#include "timer.h"
 
 class Interface
 {
@@ -24,6 +27,8 @@ public:
 
 	Interface(std::vector<Algorythm>& sortings);
 	void mainMenu();
+	void testAllSortings();
+	void testGivenSorting();
 	void tableAjustmentMenu();
 };
 

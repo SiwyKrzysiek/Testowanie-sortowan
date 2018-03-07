@@ -4,9 +4,9 @@ using namespace std;
 
 Interface::Interface(vector<Algorythm>& sortings) : sortings(sortings), programInfo("Krzysztof Dabrowski gr. 1I2\nProjekt 1 - Testowanie szybkosci algorytmow sortujacych\n-------------------------------------------------------\n"), maxi(INT_MAX), mini(0)
 {
-	tab.resize(1000);
+	tab.resize(2000);
 	Generator generator;
-	generator.fill(tab, mini, maxi);
+	generator.fill(tab, maxi, mini);
 
 	tableAjustmentMenuContent =
 		"W tym miejscu mozesz dostosowac tablice, ktora bedzie sortowana\n"
@@ -30,7 +30,7 @@ void Interface::mainMenu()
 		switch (decision)
 		{
 		case '1':
-
+			testAllSortings();
 			break;
 		case '2':
 			tableAjustmentMenu();
@@ -154,4 +154,39 @@ void Interface::readTableFromUser()
 	}
 
 	cout << "Tablica zostala zapisana" << endl;
+}
+
+void Interface::testAllSortings()
+{
+	vector<pair<string, double>> namesAndTimes;
+
+	for (Algorythm& sorting : sortings)
+	{
+		double time = Timer::timeOfSorting(sorting, tab);
+		cout << sorting << "\nCzas sortowania " << tab.size() << " elementow: " <<  time << "s\n\n";
+
+		namesAndTimes.push_back(make_pair(sorting.getName(), time));
+	}
+
+	sort(namesAndTimes.begin(), namesAndTimes.end(), [](pair<string, double> a, pair<string, double> b) {return a.second < b.second; });
+
+	cout << "Ranking algorytmow wzgledem czasu sortwoania:" << endl;
+	int i = 1;
+	for (pair<string, double>& info : namesAndTimes)
+	{
+		cout << i++ << ". " << info.first << endl;
+	}
+
+	cout << endl;
+}
+
+void Interface::testGivenSorting()
+{
+	cout << "Wybierz, ktore sortowanie chcesz przetestowac: " << endl;
+
+	int i = 1;
+	for (Algorythm& sorting : sortings)
+		cout << i++ << ". " << sorting.getName() << endl;
+	cout << endl;
+	
 }
