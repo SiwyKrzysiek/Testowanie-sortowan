@@ -36,7 +36,7 @@ void Interface::mainMenu()
 			tableAjustmentMenu();
 			break;
 		case '3':
-
+			testGivenSorting();
 			break;
 #ifdef _DEBUG
 		case '4':
@@ -189,4 +189,15 @@ void Interface::testGivenSorting()
 		cout << i++ << ". " << sorting.getName() << endl;
 	cout << endl;
 	
+	int choice;
+	cin >> choice;
+	if (!cin || choice > sortings.size() || choice <= 0)
+	{
+		cout << "Niepoprawny numer algorytmu" << endl;
+		cin.clear();
+		cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+		return;
+	}
+
+	cout << sortings[choice-1] << "\nCzas sortowania " << tab.size() << " elementow: " << Timer::timeOfSorting(sortings[choice - 1], tab) << "s\n";
 }
