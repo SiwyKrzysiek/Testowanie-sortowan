@@ -12,7 +12,7 @@ Interface::Interface(vector<Algorythm>& sortings) : sortings(sortings), programI
 		"1. Zmien rozmiar tablicy\n"
 		"2. Zmien zakres generowanych wartosci\n"
 		"3. Wprowadz wlasna tablice\n"
-		"4. Generuj ponownie wartosci\n"
+		"4. Losuj ponownie wartosci\n"
 		"q - wroc do glownego menue";
 }
 
@@ -120,7 +120,8 @@ string Interface::mainMenuContent() const
 
 void Interface::regenerateTable()
 {
-	Generator::fill(tab, mini, maxi);
+    Generator generator
+	generator.fill(tab, mini, maxi);
 }
 
 void Interface::readTableFromUser()
@@ -138,7 +139,11 @@ void Interface::readTableFromUser()
 		{
 			cin.clear();
 			if (cin.peek() == 'q')
-				break;
+            {
+                cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+                break;
+            }
+				
 			cout << "Niepoprawna liczba" << endl;
 			cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
 		}

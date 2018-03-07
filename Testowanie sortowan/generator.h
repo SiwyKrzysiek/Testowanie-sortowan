@@ -11,7 +11,7 @@ public:
 	Generator();
 
 
-	static void fill(std::vector<int>& tab, int maxValue = RAND_MAX, int minValu = 0);
+	void fill(std::vector<int>& tab, int maxValue = RAND_MAX, int minValu = 0);
 };
 
 #endif // GENERATOR_H

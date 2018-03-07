@@ -30,7 +30,8 @@ int main()
 
 #if 0
     vector<int> tablica(100);
-    Generator::fill(tablica);
+    Generator generator;
+    generator.fill(tablica);
 	Algorythm algorythm("Sortowanie babelkowe", bubbleSortV3);
     
     clock_t t1,t2;

@@ -2,6 +2,9 @@
 #define TIMER_H
 
 #include <ctime>
+#include <vector>
+
+#include "algorythm.h"
 
 class Timer
 {
@@ -21,6 +24,7 @@ public:
 	double getTimeInSeconds() const;
     double getTimeInMinutes() const;
     double getTimeInHours() const;
+    static double timeOfSorting(Algorythm algorythm, std::vector<int> tab);
 };
 
 #endif // TIMER_H
