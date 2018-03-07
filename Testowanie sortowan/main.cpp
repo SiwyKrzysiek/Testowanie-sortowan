@@ -15,12 +15,13 @@ using namespace std;
 
 int main()
 {
-	vector<Algorythm> sortings = 
+	vector<Algorythm> sortings =
 	{
 		//Algorythm("Sortowanie glupie", stupidBubbleSort),
 		Algorythm("Sortowanie babelkowe nieoptymalne", bubbleSortV1),
 		Algorythm("Sortowanie babelkowe zmniejszajace zakres", bubbleSortV3),
 		Algorythm("Sortowanie babelkowe wykrywajace uporzadkowanie", bubbleSortV3),
+		Algorythm("Sortowanie przez wybor", selectionSort),
 		Algorythm("Sortowanie szybkie", quickSot)
 	};
 

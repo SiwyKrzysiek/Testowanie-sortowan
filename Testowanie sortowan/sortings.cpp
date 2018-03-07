@@ -57,20 +57,13 @@ void quickSot(std::vector<int>& tab)
     std::sort(tab.begin(), tab.end());
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+void selectionSort(std::vector<int>& tab)
+{
+	for (int j = 0; j < tab.size() - 1; j++)
+	{
+		int pmin = j;
+		for (int i = j + 1; i < tab.size(); i++)
+			if (tab[i] < tab[pmin]) pmin = i;
+		std::swap(tab[pmin], tab[j]);
+	}
+}
