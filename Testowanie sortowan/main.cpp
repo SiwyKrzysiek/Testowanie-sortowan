@@ -22,6 +22,7 @@ int main()
 		Algorythm("Sortowanie babelkowe zmniejszajace zakres", bubbleSortV3),
 		Algorythm("Sortowanie babelkowe wykrywajace uporzadkowanie", bubbleSortV3),
 		Algorythm("Sortowanie przez wybor", selectionSort),
+		Algorythm("Sortowanie przez wstawienie", insertionSort),
 		Algorythm("Sortowanie szybkie", quickSot)
 	};
 

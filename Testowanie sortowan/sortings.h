@@ -10,5 +10,6 @@ void bubbleSortV2(std::vector<int>& tab);
 void bubbleSortV3(std::vector<int>& tab);
 void quickSot(std::vector<int>& tab);
 void selectionSort(std::vector<int>& tab);
+void insertionSort(std::vector<int>& tab);
 
 #endif /* SORTINGS_H */
