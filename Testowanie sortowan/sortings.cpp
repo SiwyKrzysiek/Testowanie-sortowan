@@ -67,3 +67,20 @@ void selectionSort(std::vector<int>& tab)
 		std::swap(tab[pmin], tab[j]);
 	}
 }
+
+void insertionSort(std::vector<int>& tab)
+{
+	int i;
+
+	for (int j = tab.size() - 2; j >= 0; j--)
+	{
+		int x = tab[j], ip = j, ik = tab.size();
+		while (ik - ip > 1)
+		{
+			i = (ip + ik) / 2;
+			if (x <= tab[i]) ik = i; else ip = i;
+		}
+		for (i = j; i < ip; i++) tab[i] = tab[i + 1];
+		tab[ip] = x;
+	}
+}
