@@ -24,7 +24,7 @@ public:
 	double getTimeInSeconds() const;
     double getTimeInMinutes() const;
     double getTimeInHours() const;
-    static double timeOfSorting(Algorythm algorythm, std::vector<int> tab);
+    static double timeOfSorting(Algorythm& algorythm, std::vector<int> tab);
 };
 
 #endif // TIMER_H

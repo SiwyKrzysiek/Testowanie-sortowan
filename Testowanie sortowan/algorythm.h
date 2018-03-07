@@ -14,6 +14,7 @@ public:
 	std::string getName() const;
 	void setName(std::string name);
 	void sort(std::vector<int>& tab);
+	friend std::ostream &operator<<(std::ostream &output, const Algorythm &algorythm);
 };
 
 #endif // ALGORYTHM_H

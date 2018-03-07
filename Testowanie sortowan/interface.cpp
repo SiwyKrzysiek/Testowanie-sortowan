@@ -2,10 +2,11 @@
 
 using namespace std;
 
-Interface::Interface(vector<Algorythm>& sortings) : sortings(sortings), programInfo("Krzysztof Dabrowski gr. 1I2\nProjekt 1 - Testowanie szybkosci algorytmow sortujacych\n-------------------------------------------------------\n"), maxi(INT_MAX), mini(0), tableFromUser(false)
+Interface::Interface(vector<Algorythm>& sortings) : sortings(sortings), programInfo("Krzysztof Dabrowski gr. 1I2\nProjekt 1 - Testowanie szybkosci algorytmow sortujacych\n-------------------------------------------------------\n"), maxi(INT_MAX), mini(0)
 {
 	tab.resize(1000);
-	Generator::fill(tab, mini, maxi);
+	Generator generator;
+	generator.fill(tab, mini, maxi);
 
 	tableAjustmentMenuContent =
 		"W tym miejscu mozesz dostosowac tablice, ktora bedzie sortowana\n"
@@ -120,13 +121,12 @@ string Interface::mainMenuContent() const
 
 void Interface::regenerateTable()
 {
-    Generator generator
+	Generator generator;
 	generator.fill(tab, mini, maxi);
 }
 
 void Interface::readTableFromUser()
 {
-	tableFromUser = true;
 	tab.clear();
 
 	cout << "Podowaj kolejne liczby calkowite. Wpisanie \"q\" zakonczy wprowadzaie danych" << endl << endl;

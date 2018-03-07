@@ -61,7 +61,10 @@ double Timer::getTimeInHours() const
     return getTimeInMinutes() / 60.0;
 }
 
-double Timer::timeOfSorting(Algorythm algorythm, std::vector<int> tab)
+double Timer::timeOfSorting(Algorythm& algorythm, std::vector<int> tab)
 {
-    //Timer
+	Timer timer;
+	algorythm.sort(tab);
+
+	return timer.getTimeInSeconds();
 }

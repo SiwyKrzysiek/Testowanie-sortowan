@@ -21,3 +21,9 @@ void Algorythm::sort(vector<int>& tab)
 {
 	sortowanie(tab);
 }
+
+std::ostream &operator<<(std::ostream &output, const Algorythm &algorythm)
+{
+	output << algorythm.getName();
+	return output;
+}

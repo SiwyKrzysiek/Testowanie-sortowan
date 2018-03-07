@@ -18,7 +18,6 @@ class Interface
 	std::vector<Algorythm> sortings;
 	std::vector<int> tab;
 	int maxi, mini;
-	bool tableFromUser;
 
 public:
 	const std::string programInfo;
