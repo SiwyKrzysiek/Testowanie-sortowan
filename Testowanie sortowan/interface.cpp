@@ -4,7 +4,7 @@ using namespace std;
 
 Interface::Interface(vector<Algorythm>& sortings) : sortings(sortings), programInfo("Krzysztof Dabrowski gr. 1I2\nProjekt 1 - Testowanie szybkosci algorytmow sortujacych\n-------------------------------------------------------\n"), maxi(INT_MAX), mini(0)
 {
-	tab.resize(2000);
+	tab.resize(5000);
 	Generator generator;
 	generator.fill(tab, maxi, mini);
 

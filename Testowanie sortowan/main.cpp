@@ -1,7 +1,9 @@
 //Program do porownywania skutecznosci algorytmow sortujacych
 //Napisany jako projekt 1 na PROI
 //Autor: Krzysztof Dabrowski
-
+//Aby dodac nowe sortowanie do testow nalezy: 
+//1. Dodac do pliku sortings funkcje sortujaca, ktora przyjmuje jako argument vector<int> i go sortuje
+//2. Dodac do vectora sortings w main() - Algorythm("[NAZWA SORTOWANIA]", [FUNKCJA SORTUJACA]),
 #include <iostream>
 #include <ctime>
 #include <vector>
@@ -30,5 +32,9 @@ int main()
 	cout << interface.programInfo << endl;
 	interface.mainMenu();
 
+#ifdef _DEBUG
 	return Test::autoTest();
+#else
+	return 0;
+#endif
 }
