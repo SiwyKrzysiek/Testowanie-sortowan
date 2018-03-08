@@ -2,6 +2,7 @@
 #define TEST_H
 
 #include <vector>
+#include <string>
 #include "generator.h"
 #include "algorythm.h"
 
@@ -12,6 +13,8 @@ public:
 	static bool generator();
 	static bool sorting(void (*sortowanie)(std::vector<int>&));
 	static bool allSortings(std::vector<Algorythm>& sortings);
+	static void testingMenu();
+	static void timerManualTesting();
 };
 
 #endif //TEST_H

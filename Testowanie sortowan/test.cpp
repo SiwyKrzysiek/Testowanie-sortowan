@@ -1,4 +1,5 @@
 #include "test.h"
+#include <iostream>
 
 using namespace std;
 
@@ -46,4 +47,43 @@ bool Test::allSortings(vector<Algorythm>& sortings)
 			return true;
 
 	return false;
+}
+
+void Test::testingMenu()
+{
+	while (true)
+	{
+		std::cout << "Wybierz jaka funkcjonalnosc chcesz przetestowac\n"
+			"1. Licznik czasu\n" << endl;
+
+		char decision;
+		std::cin >> decision;
+
+		switch (decision)
+		{
+		case '1':
+			timerManualTesting();
+			break;
+		case 'q':
+			return;
+		default:
+			cout << "Nierozpoznay znak. Sprobuj ponownie" << endl;
+		}
+	}
+}
+
+void Test::timerManualTesting()
+{
+	cout << "Licznik zostal odpalony" << endl;
+
+	std::string menu = "Mozliwe akcje:\n"
+		"1. Wystartuj ponownie licznik\n"
+		"2. Zapalzuj licznik\n"
+		"3. Zatrzymaj licznik\n\n"
+		"4. Odczytaj czas w cyknieciach zegra\n"
+		"5. Odczytaj czas w sekundach\n"
+		"6. Odczytaj czas w minutach\n"
+		"7. Odczytaj czas w godzinach\n";
+
+	cout << menu << endl;
 }
