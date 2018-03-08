@@ -7,6 +7,11 @@ Algorythm::Algorythm(const string name, void(*sortowanie) (vector<int>&)) : name
 	
 }
 
+FuncSig Algorythm::getSortingFunction() const
+{
+	return sortowanie;
+}
+
 std::string Algorythm::getName() const
 {
 	return name;

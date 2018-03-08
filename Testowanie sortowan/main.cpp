@@ -33,7 +33,7 @@ int main()
 	interface.mainMenu();
 
 #ifdef _DEBUG
-	return Test::autoTest();
+	return Test::autoTest(sortings);
 #else
 	return 0;
 #endif
