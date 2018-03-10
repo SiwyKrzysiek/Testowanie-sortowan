@@ -48,3 +48,87 @@ bool Test::allSortings(vector<Algorythm>& sortings)
 
 	return false;
 }
+
+void Test::testingMenu()
+{
+	const string menu = "Wybierz jaka funkcjonalnosc chcesz przetestowac:\n"
+		"1. Licznik czasu\n"
+		"q - wroc do glownego menu\n";
+
+	while (true)
+	{
+		std::cout << menu << endl;
+
+		char decision;
+		std::cin >> decision;
+
+		switch (decision)
+		{
+		case '1':
+			timerManualTesting();
+			break;
+		case 'q':
+			return;
+		default:
+			cout << "Nierozpoznay znak. Sprobuj ponownie" << endl;
+		}
+	}
+}
+
+void Test::timerManualTesting()
+{
+	cout << "Licznik zostal odpalony." << endl;
+
+	const std::string menu = "Mozliwe akcje:\n"
+		"1. Wystartuj licznik\n"
+		"2. Zapalzuj licznik\n"
+		"3. Zatrzymaj licznik\n"
+		"--------------------------------------\n"
+		"4. Odczytaj czas w cyknieciach zegra\n"
+		"5. Odczytaj czas w sekundach\n"
+		"6. Odczytaj czas w minutach\n"
+		"7. Odczytaj czas w godzinach\n"
+		"q - Wroc do menu testow\n";
+
+	Timer timer;
+	while (true)
+	{
+		cout << menu << endl;
+		
+		char decision;
+		cin >> decision;
+		cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); //Wyczyszczenie strumienia
+
+		switch (decision)
+		{
+		case '1':
+			timer.start();
+			cout << "Licznik zostal uruchomiony" << endl;
+			break;
+		case '2':
+			timer.pause();
+			cout << "Licznik zostal zapalzowany" << endl;
+			break;
+		case '3':
+			timer.stop();
+			cout << "Licznik zostal zatrzymany" << endl;
+			break;
+		case '4':
+			cout << timer.getTimeInTicks() << " T" << endl;
+			break;
+		case '5':
+			cout << timer.getTimeInSeconds() << " s" << endl;
+			break;
+		case '6':
+			cout << timer.getTimeInMinutes() << " m" << endl;
+			break;
+		case '7':
+			cout << timer.getTimeInHours() << " h" << endl;
+			break;
+		case 'q':
+			return;
+		default:
+			cout << "Nierozpoznay znak. Sprobuj ponownie" << endl;
+		}
+	}
+}

@@ -11,6 +11,7 @@
 #include "generator.h"
 #include "algorythm.h"
 #include "timer.h"
+#include "test.h"
 
 class Interface
 {

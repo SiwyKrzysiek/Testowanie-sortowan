@@ -14,16 +14,16 @@ Interface::Interface(vector<Algorythm>& sortings) : sortings(sortings), programI
 		"2. Zmien zakres generowanych wartosci\n"
 		"3. Wprowadz wlasna tablice\n"
 		"4. Losuj ponownie wartosci\n"
-		"q - wroc do glownego menue";
+		"q - wroc do glownego menu";
 }
 
 void Interface::mainMenu()
 {
-	char decision;
 	while (true)
 	{
 		cout << endl << mainMenuContent() << endl << endl;
 
+		char decision;
 		cin >> decision;
 		cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); //Wyczyszczenie strumienia
 
@@ -40,7 +40,7 @@ void Interface::mainMenu()
 			break;
 #ifdef _DEBUG
 		case '4':
-
+			Test::testingMenu();
 			break;
 #endif
 		case 'q':

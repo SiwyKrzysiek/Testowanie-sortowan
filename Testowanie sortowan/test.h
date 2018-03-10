@@ -3,8 +3,10 @@
 
 #include <vector>
 #include <string>
+
 #include "generator.h"
 #include "algorythm.h"
+#include "timer.h"
 
 class Test
 {
