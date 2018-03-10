@@ -2,7 +2,7 @@
 
 using namespace std;
 
-Interface::Interface(vector<Algorythm>& sortings) : sortings(sortings), programInfo("Krzysztof Dabrowski gr. 1I2\nProjekt 1 - Testowanie szybkosci algorytmow sortujacych\n-------------------------------------------------------\n"), maxi(INT_MAX), mini(0)
+Interface::Interface(const vector<Algorythm>& sortings) : sortings(sortings), programInfo("Krzysztof Dabrowski gr. 1I2\nProjekt 1 - Testowanie szybkosci algorytmow sortujacych\n-------------------------------------------------------\n"), maxi(INT_MAX), mini(0)
 {
 	tab.resize(5000);
 	Generator generator;
@@ -40,7 +40,7 @@ void Interface::mainMenu()
 			break;
 #ifdef _DEBUG
 		case '4':
-			Test::testingMenu();
+			Test::testingMenu(sortings);
 			break;
 #endif
 		case 'q':
@@ -94,7 +94,7 @@ void Interface::tableAjustmentMenu()
 			regenerateTable();
 			break;;
 		case '3':
-			readTableFromUser();
+			tab = readTableFromUser();
 			break;;
 		case '4':
 			regenerateTable();
@@ -125,9 +125,9 @@ void Interface::regenerateTable()
 	generator.fill(tab, mini, maxi);
 }
 
-void Interface::readTableFromUser()
+std::vector<int> Interface::readTableFromUser()
 {
-	tab.clear();
+	vector<int> tab;
 
 	cout << "Podowaj kolejne liczby calkowite. Wpisanie \"q\" zakonczy wprowadzaie danych" << endl << endl;
 
@@ -154,6 +154,19 @@ void Interface::readTableFromUser()
 	}
 
 	cout << "Tablica zostala zapisana" << endl;
+
+	return tab;
+}
+
+std::string Interface::vectorToString(const std::vector<int>& tab)
+{
+	string result;
+	for (const int& number : tab)
+	{
+		result += (result.empty() ? "" : " ") + to_string(number);
+	}
+	
+	return result;
 }
 
 void Interface::testAllSortings()
@@ -185,7 +198,7 @@ void Interface::testGivenSorting()
 	cout << "Wybierz, ktore sortowanie chcesz przetestowac: " << endl;
 
 	int i = 1;
-	for (Algorythm& sorting : sortings)
+	for (const Algorythm& sorting : sortings)
 		cout << i++ << ". " << sorting.getName() << endl;
 	cout << endl;
 	

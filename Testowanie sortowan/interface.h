@@ -17,7 +17,6 @@ class Interface
 {
 	std::string mainMenuContent() const;
 	void regenerateTable();
-	void readTableFromUser();
 	std::string tableAjustmentMenuContent;
 	std::vector<Algorythm> sortings;
 	std::vector<int> tab;
@@ -26,11 +25,13 @@ class Interface
 public:
 	const std::string programInfo;
 
-	Interface(std::vector<Algorythm>& sortings);
+	Interface(const std::vector<Algorythm>& sortings);
 	void mainMenu();
 	void testAllSortings();
 	void testGivenSorting();
 	void tableAjustmentMenu();
+	static std::vector<int> readTableFromUser();
+	static std::string vectorToString(const std::vector<int>& tab);
 };
 
 #endif //INTERFACE_H

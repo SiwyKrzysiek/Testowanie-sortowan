@@ -7,6 +7,7 @@
 #include "generator.h"
 #include "algorythm.h"
 #include "timer.h"
+#include "interface.h"
 
 class Test
 {
@@ -15,7 +16,8 @@ public:
 	static bool generator();
 	static bool sorting(void (*sortowanie)(std::vector<int>&));
 	static bool allSortings(std::vector<Algorythm>& sortings);
-	static void testingMenu();
+	static void testingMenu(const std::vector<Algorythm>& sortings);
+	static void sortingsManualTest(const std::vector<Algorythm>& sortings);
 	static void timerManualTesting();
 };
 

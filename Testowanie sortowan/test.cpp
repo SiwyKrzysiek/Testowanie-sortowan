@@ -49,10 +49,11 @@ bool Test::allSortings(vector<Algorythm>& sortings)
 	return false;
 }
 
-void Test::testingMenu()
+void Test::testingMenu(const std::vector<Algorythm>& sortings)
 {
 	const string menu = "Wybierz jaka funkcjonalnosc chcesz przetestowac:\n"
 		"1. Licznik czasu\n"
+		"2. Sortowania\n"
 		"q - wroc do glownego menu\n";
 
 	while (true)
@@ -67,12 +68,78 @@ void Test::testingMenu()
 		case '1':
 			timerManualTesting();
 			break;
+		case '2':
+			sortingsManualTest(sortings);
+			break;
 		case 'q':
 			return;
 		default:
 			cout << "Nierozpoznay znak. Sprobuj ponownie" << endl;
 		}
 	}
+}
+
+void Test::sortingsManualTest(const std::vector<Algorythm>& sortings)
+{
+	const string firtsMenu = "Wybierz sposob utworzenia tablicy, ktora bedzie sortowana:\n"
+		"1. Wprowadz tablice recznie\n"
+		"2. Generuj tablice losowo\n"
+		"q -  Wroc do menu testow\n";
+
+	while (true)
+	{
+		Generator generator;
+
+		cout << firtsMenu << endl;
+
+		char decision;
+		cin >> decision;
+		cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); //Wyczyszczenie strumienia
+
+		vector<int> tab(15);
+		switch (decision)
+		{
+		case '1':
+			tab = Interface::readTableFromUser();
+			break;
+		case '2':
+			generator.fill(tab, 50);
+			break;
+		case 'q':
+			return;
+		default:
+			cout << "Nierozpoznay znak." << endl;
+			return;
+		}
+
+		while (true)
+		{
+			cout << "Wybierz sortowanie, ktore chcesz przetestowac:" << endl;
+
+			int i = 1;
+			for (const Algorythm& sorting : sortings)
+				cout << i++ << ". " << sorting.getName() << endl;
+			cout << endl << "q - Wroc do menu testow" << endl;
+
+			int choice;
+			cin >> choice;
+			if (!cin || choice > sortings.size() || choice <= 0)
+			{
+				cin.clear();
+				if (cin.peek() == 'q')
+					return;
+				cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+				
+				cout << "Niepoprawny numer algorytmu" << endl;
+			}
+			vector<int> coppy = tab;
+			sortings[choice - 1].getSortingFunction()(coppy);
+
+			cout << "\nTablica przed sortowaniem:\n" << Interface::vectorToString(tab) << endl
+				<< "Tablica po sorowaniu:\n" << Interface::vectorToString(coppy) << endl << endl;
+		}
+	}
+	
 }
 
 void Test::timerManualTesting()
