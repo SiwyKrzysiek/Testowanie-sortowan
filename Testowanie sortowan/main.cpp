@@ -17,7 +17,7 @@ using namespace std;
 
 int main()
 {
-	vector<Algorythm> sortings =
+	vector<Algorythm> sortings = //Tutaj nalezy dodac nowe sortowania
 	{
 		//Algorythm("Sortowanie glupie", stupidBubbleSort),
 		Algorythm("Sortowanie babelkowe nieoptymalne", bubbleSortV1),
