@@ -5,6 +5,7 @@
 #include <vector>
 
 #include "algorythm.h"
+#include "parameters.h"
 
 class Timer
 {

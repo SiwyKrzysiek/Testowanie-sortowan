@@ -8,6 +8,7 @@
 #include "algorythm.h"
 #include "timer.h"
 #include "interface.h"
+#include "parameters.h"
 
 class Test
 {

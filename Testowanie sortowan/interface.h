@@ -8,6 +8,7 @@
 #include <utility>
 #include <iomanip>
 
+#include "parameters.h"
 #include "generator.h"
 #include "algorythm.h"
 #include "timer.h"

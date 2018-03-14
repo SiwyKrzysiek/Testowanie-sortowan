@@ -4,14 +4,14 @@
 //Aby dodac nowe sortowanie do testow nalezy: 
 //1. Dodac do pliku sortings funkcje sortujaca, ktora przyjmuje jako argument vector<int> i go sortuje
 //2. Dodac do vectora sortings w main() - Algorythm("[NAZWA SORTOWANIA]", [FUNKCJA SORTUJACA]),
+
 #include <iostream>
-#include <ctime>
 #include <vector>
 #include "test.h"
 #include "generator.h"
 #include "sortings.h"
-#include "timer.h"
 #include "interface.h"
+#include "parameters.h"
 
 using namespace std;
 

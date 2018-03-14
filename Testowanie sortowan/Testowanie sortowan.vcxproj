@@ -130,6 +130,7 @@
     <ClInclude Include="algorythm.h" />
     <ClInclude Include="generator.h" />
     <ClInclude Include="interface.h" />
+    <ClInclude Include="parameters.h" />
     <ClInclude Include="sortings.h" />
     <ClInclude Include="test.h" />
     <ClInclude Include="timer.h" />

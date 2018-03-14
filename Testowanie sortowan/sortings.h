@@ -3,6 +3,7 @@
 
 #include <vector>
 #include <algorithm>
+#include "parameters.h"
 
 void stupidBubbleSort(std::vector<int>& tab);
 void bubbleSortV1(std::vector<int>& tab);
